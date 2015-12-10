@@ -1,0 +1,14 @@
+// Publish jar to local maven repository
+
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        localJarPub(MavenPublication) {
+            artifacts {
+                artifact "build/libs/${project.name}-${version}.jar"
+            }
+        }
+    }   
+}
+
